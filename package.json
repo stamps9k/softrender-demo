@@ -1,0 +1,81 @@
+{
+  "name": "webgpu-particles-demo",
+  "version": "0.0.1",
+  "description": "A simple website to demonstrate my webgpu-particles library.",
+  "keywords": [
+    "webapp",
+    "webgpu",
+    "particles"
+  ],
+  "homepage": "https://github.com/stamps9k/webgpu-particles-demo#readme",
+  "bugs": {
+    "url": "https://github.com/stamps9k/webgpu-particles-demo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stamps9k/webgpu-particles-demo.git"
+  },
+  "license": "ISC",
+  "author": "James Stamp",
+  "type": "module",
+  "main": "server.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite --config config/vite.config.ts",
+    "build": "tsc --project config/tsconfig.server.json --noEmit && vite --config config/vite.config.ts build && tsup --config config/tsup.config.ts && mkdir -p dist/database && cp database/app.db dist/database/app.db",
+    "start-prod": "node dist/server.mjs",
+    "start-dev": "nodemon --exec tsx server.mts",
+    "preview": "vite preview",
+    "lint": "eslint . --config config/eslint.config.mjs",
+    "format:check": "prettier --check . --config config/.prettierrc",
+    "format:fix": "prettier --write . --config config/.prettierrc",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/bootstrap": "^5.2.10",
+    "@types/cors": "^2.8.19",
+    "@types/debug": "^4.1.13",
+    "@types/express": "^5.0.6",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/parser": "^8.59.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "dotenv": "^16.4.7",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.4",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.8.3",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "cors": "^2.8.6",
+    "debug": "^4.4.3",
+    "express": "^5.2.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.1",
+    "react-toastify": "^11.0.5",
+    "tsup": "^8.5.1",
+    "softrender": "../softrender/pkg"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix --config config/eslint.config.mjs",
+      "prettier --write --config config/.prettierrc"
+    ]
+  }
+}

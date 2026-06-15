@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "esnext",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "noEmit": false,
+    "rootDir": "../"
+  },
+  "include": ["../server.ts", "../api/*"]
+}
