@@ -34,7 +34,8 @@
     "lint": "eslint . --config config/eslint.config.mjs",
     "format:check": "prettier --check . --config config/.prettierrc",
     "format:fix": "prettier --write . --config config/.prettierrc",
-    "prepare": "husky"
+    "prepare": "husky",
+    "audit:ci": "npx --yes audit-ci@7.1.0 --config audit-ci.jsonc"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
@@ -69,7 +70,7 @@
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.14.1",
     "react-toastify": "^11.0.5",
-    "tsup": "^8.5.1",
+    "tsup": "^9.0.0",
     "softrender": "../softrender/pkg"
   },
   "lint-staged": {
@@ -77,5 +78,11 @@
       "eslint --fix --config config/eslint.config.mjs",
       "prettier --write --config config/.prettierrc"
     ]
+  },
+  "overrides": {
+    "minimatch@>=7.0.0 <11.0.1": "^11.0.5",
+    "nodemon": {
+      "minimatch": "^11.0.5"
+    }
   }
 }
