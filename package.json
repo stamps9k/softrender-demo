@@ -1,19 +1,19 @@
 {
-  "name": "webgpu-particles-demo",
+  "name": "softrender-demo",
   "version": "0.0.1",
-  "description": "A simple website to demonstrate my webgpu-particles library.",
+  "description": "A simple website to demonstrate my softrender library.",
   "keywords": [
     "webapp",
-    "webgpu",
-    "particles"
+    "softrender",
+    "software-rendering"
   ],
-  "homepage": "https://github.com/stamps9k/webgpu-particles-demo#readme",
+  "homepage": "https://github.com/stamps9k/softrender-demo#readme",
   "bugs": {
-    "url": "https://github.com/stamps9k/webgpu-particles-demo/issues"
+    "url": "https://github.com/stamps9k/softrender-demo/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stamps9k/webgpu-particles-demo.git"
+    "url": "git+https://github.com/stamps9k/softrender-demo.git"
   },
   "license": "ISC",
   "author": "James Stamp",
